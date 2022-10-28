@@ -89,6 +89,7 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 				h.http(u, w, r)
 				return
 			} else {
+				r.URL.Path = path[index:]
 				h.file(k, to, w, r)
 				return
 			}
