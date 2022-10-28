@@ -2,23 +2,23 @@
     "port":7788,
     "routers":[
         {
-            "router":"a",
+            "router":"/a",
             "disable":false,
             "to":"http://127.0.0.1:8090"
         },
         {
-            "router":"b",
+            "router":"/b",
             "to":"http://127.0.0.1:8091"
         },
         {
-            "router":"c",
+            "router":"/c",
             "to":"http://127.0.0.1:8093"
         },
         {
             "forward_port":8094
         },
         {
-            "router":"d",
+            "router":"/",
             "dist_file":"./dist_d"
         }
     ]

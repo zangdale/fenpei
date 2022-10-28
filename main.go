@@ -23,7 +23,7 @@ func init() {
 }
 
 func main() {
-	hand := NewHandler(confToRouters(routers.Routers))
+	hand := confToRouters(routers.Routers)
 	go func() {
 		for {
 			if e := recover(); e != nil {
