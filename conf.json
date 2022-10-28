@@ -1,0 +1,5 @@
+{
+    "debug": false,
+    "port": 8899,
+    "routers_file": "routers.json"
+}
