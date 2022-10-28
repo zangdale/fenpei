@@ -16,7 +16,9 @@ type BaseRouter struct {
 }
 
 func NewBaseRouter() *BaseRouter {
-	return &BaseRouter{}
+	return &BaseRouter{
+		children: make(map[string]*BaseRouter),
+	}
 }
 
 // GetKey returns the string key
@@ -85,17 +87,11 @@ func (b *BaseRouter) GetChildrenKeys() []string {
 
 // ChildrenAt returns the children of type *BaseRouter at the requested key
 func (b *BaseRouter) ChildrenAt(key string) *BaseRouter {
-	if b.children == nil {
-		b.children = make(map[string]*BaseRouter)
-	}
 	return b.children[key]
 }
 
 // WithChildren returns a copy with the *BaseRouter with the given key string
 func (b *BaseRouter) WithChildren(key string, value *BaseRouter) *BaseRouter {
-	if b.children == nil {
-		b.children = make(map[string]*BaseRouter)
-	}
 	b.children[key] = value
 	return b
 }
